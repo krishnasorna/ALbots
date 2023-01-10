@@ -19,7 +19,8 @@ frontLegSensorValues = numpy.zeros(100)
 for i in range(100):
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-    #frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
+    frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link(
+        "FrontLeg")
     time.sleep(1/60)
 
 numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
