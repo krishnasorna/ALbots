@@ -6,6 +6,13 @@ import random
 import time
 import pybullet_data
 
+amplitudeF = numpy.pi/4
+amplitudeB = numpy.pi/4
+frequencyF = 5
+phaseOffsetF = 0
+frequencyB = 5.6
+phaseOffsetB = numpy.pi/4
+
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0, 0, -9.8)
@@ -14,9 +21,21 @@ robotId = p.loadURDF("body.urdf")
 p.loadSDF("world.sdf")
 pyrosim.Prepare_To_Simulate(robotId)
 
-backLegSensorValues = numpy.zeros(100)
-frontLegSensorValues = numpy.zeros(100)
-for i in range(500):
+backLegSensorValues = numpy.zeros(1000)
+frontLegSensorValues = numpy.zeros(1000)
+
+xAnglesF = numpy.linspace(phaseOffsetF, 2*frequencyF *
+                          numpy.pi + phaseOffsetF, 1000)
+targetAnglesF = amplitudeF * numpy.sin(xAnglesF)
+
+xAnglesB = numpy.linspace(phaseOffsetB, 2*frequencyB *
+                          numpy.pi + phaseOffsetB, 1000)
+targetAnglesB = amplitudeB * numpy.sin(xAnglesB)
+
+numpy.save('data/targetAnglesValuesFront.npy', targetAnglesF)
+numpy.save('data/targetAnglesValuesBack.npy', targetAnglesB)
+
+for i in range(1000):
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
     frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link(
@@ -28,17 +47,17 @@ for i in range(500):
         bodyIndex=robotId,
         jointName="Torso_BackLeg",
         controlMode=p.POSITION_CONTROL,
-        targetPosition=math.floor(random.random() * (max - min + 1) + min),
-        maxForce=100)
+        targetPosition=targetAnglesB[i],
+        maxForce=60)
 
     pyrosim.Set_Motor_For_Joint(
         bodyIndex=robotId,
         jointName="Torso_FrontLeg",
         controlMode=p.POSITION_CONTROL,
-        targetPosition=math.floor(random.random() * (max - min + 1) + min),
-        maxForce=100)
+        targetPosition=targetAnglesF[i],
+        maxForce=60)
 
-    time.sleep(1/60)
+    time.sleep(1/10000)
 
 numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
 numpy.save('data/frontLegSensorValues.npy', frontLegSensorValues)
