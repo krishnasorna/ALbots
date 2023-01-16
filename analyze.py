@@ -16,3 +16,4 @@ matplotlib.pyplot.plot(targetAnglesValuesB, label="backLeg")
 
 matplotlib.pyplot.legend()
 matplotlib.pyplot.show()
+

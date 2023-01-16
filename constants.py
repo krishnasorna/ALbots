@@ -3,12 +3,10 @@ import math
 
 amplitudeF = numpy.pi/4
 amplitudeB = numpy.pi/4
-frequencyF = 5
+frequencyF = 6
 phaseOffsetF = 0
-frequencyB = 5.6
+frequencyB = 3
 phaseOffsetB = numpy.pi/4
-
-
 gravity = -9.8
 zero = 0
 thousand = 1000
