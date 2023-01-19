@@ -15,3 +15,6 @@ class SENSOR:
     def Save_Values(self):
         numpy.save('data/sensorValues.npy', self.values)
 
+    def Prepare_To_Sense(self):
+        pass
+
