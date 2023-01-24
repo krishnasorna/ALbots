@@ -1,5 +1,10 @@
-import os
+#import os
 
-for i in range(5):
-    os.system("python3 generate.py")
-    os.system("python3 simulate.py")
+# for i in range(5):
+#     os.system("python3 generate.py")
+#     os.system("python3 simulate.py")
+
+from hillclimber import HILL_CLIMBER
+
+hc = HILL_CLIMBER()
+hc.Evolve()
