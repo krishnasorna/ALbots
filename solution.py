@@ -9,20 +9,29 @@ class SOLUTION:
     def __init__(self):
         self.weights = (numpy.random.rand(3, 2)*2) - 1
 
-    def Evaluate(self):
+    def Evaluate(self, directOrGUI):
         self.Create_World()
-        os.system("python3 simulate.py")
+        os.system("python3 simulate.py "+ directOrGUI)
         f = open("fitness.txt", "r")
         self.fitness = float(f.read())
         f.close()
 
     def Create_World(self):
+        pyrosim.Start_SDF("world.sdf")
+        pyrosim.Send_Cube(name="Box", pos=[-1.5, 1, 0.5], size=[1, 1, 1])
+        pyrosim.End()
         self.Create_Body()
         self.Create_Brain()
 
     def Create_Body(self):
-        pyrosim.Start_SDF("world.sdf")
-        pyrosim.Send_Cube(name="Box", pos=[-1.5, 1, 0.5], size=[1, 1, 1])
+        pyrosim.Start_URDF("body.urdf")
+        pyrosim.Send_Cube(name="Torso", pos=[1.5, 0, 1.5], size=[1, 1, 1])
+        pyrosim.Send_Joint(name="Torso_BackLeg", parent="Torso",
+                           child="BackLeg", type="revolute", position=[2, 0, 1])
+        pyrosim.Send_Cube(name="BackLeg", pos=[0.5, 0, -0.5], size=[1, 1, 1])
+        pyrosim.Send_Joint(name="Torso_FrontLeg", parent="Torso",
+                           child="FrontLeg", type="revolute", position=[1, 0, 1])
+        pyrosim.Send_Cube(name="FrontLeg", pos=[-0.5, 0, -0.5], size=[1, 1, 1])
         pyrosim.End()
 
     def Create_Brain(self):
@@ -40,4 +49,6 @@ class SOLUTION:
         pyrosim.End()
 
     def Mutate(self):
-        self.weights[random.randint(-1, 1)]
+        row = random.randint(0, len(self.weights)-1)
+        column = random.randint(0, len(self.weights[0])-1)
+        self.weights[row, column] = (random.random() * 2) - 1

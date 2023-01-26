@@ -1,5 +1,4 @@
 import numpy
-import math
 
 amplitudeF = numpy.pi/4
 amplitudeB = numpy.pi/4
@@ -10,4 +9,4 @@ phaseOffsetB = numpy.pi/4
 gravity = -9.8
 zero = 0
 thousand = 1000
-numberOfGenerations = 2
+numberOfGenerations = 10

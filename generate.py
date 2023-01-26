@@ -1,6 +1,7 @@
 import pyrosim.pyrosim as pyrosim
 import random
 
+
 def Create_World():
     Generate_Body()
     Generate_Brain()
@@ -25,16 +26,15 @@ def Generate_Brain():
     # pyrosim.Send_Synapse(sourceNeuronName=2, targetNeuronName=4, weight=50.0)
 
     for i in range(3):
-        for j in range(3,5):
-            pyrosim.Send_Synapse(sourceNeuronName=i, targetNeuronName=j, weight=random.uniform(-1, 1))
-
+        for j in range(3, 5):
+            pyrosim.Send_Synapse(
+                sourceNeuronName=i, targetNeuronName=j, weight=random.uniform(-1, 1))
 
     pyrosim.End()
 
 
 def Create_Robot():
     pyrosim.Start_URDF("body.urdf")
-
     pyrosim.Send_Cube(name="Torso", pos=[1.5, 0, 1.5], size=[1, 1, 1])
     pyrosim.Send_Joint(name="Torso_BackLeg", parent="Torso",
                        child="BackLeg", type="revolute", position=[2, 0, 1])
