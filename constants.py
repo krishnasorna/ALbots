@@ -10,3 +10,4 @@ gravity = -9.8
 zero = 0
 thousand = 1000
 numberOfGenerations = 10
+populationSize = 2
