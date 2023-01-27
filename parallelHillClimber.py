@@ -14,20 +14,18 @@ class PARALLEL_HILL_CLIMBER:
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID = self.nextAvailableID + 1
-        
+
     def Evolve(self):
+        self.Evaluate(self.parents)
         for currentGeneration in range(c.numberOfGenerations):
             self.Evolve_For_One_Generation()
-
-        self.Evaluate(self.parents)
 
     def Evolve_For_One_Generation(self):
         self.Spawn()
         self.Mutate()
         self.Evaluate(self.children)
         self.Print()
-        # self.Select()
-        
+        self.Select()
 
     def Spawn(self):
         self.children = {}
@@ -41,17 +39,22 @@ class PARALLEL_HILL_CLIMBER:
             self.children[i].Mutate()
 
     def Select(self):
-        if(self.parent.fitness < self.child.fitness):
-            self.parent = self.child
+        for i in (self.parents.keys()):
+            if(self.parents[i].fitness < self.children[i].fitness):
+                self.parents[i] = self.children[i]
 
     def Print(self):
         for i in (self.parents.keys()):
-            print("" + str(self.parents[i].fitness) + ", " + str(self.children[i].fitness))
-
+            print(str(self.parents[i].fitness) + ", " + str(self.children[i].fitness))
 
     def Show_Best(self):
-        #self.parent.Evaluate("GUI")
-        pass
+        max = self.parents[0].fitness
+        index = 0
+        for i in (self.parents.keys()):
+            if self.parents[i].fitness > max:
+                max = self.parents[i].fitness
+                index = i
+        self.parents[index].Start_Simulation("GUI")
 
     def Evaluate(self, solutions):
         for i in range(c.populationSize):
@@ -59,4 +62,3 @@ class PARALLEL_HILL_CLIMBER:
 
         for i in range(c.populationSize):
             solutions[i].Wait_For_Simulation_To_End()
-            print(solutions[i].fitness)
