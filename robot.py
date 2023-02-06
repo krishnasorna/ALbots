@@ -47,7 +47,7 @@ class ROBOT:
 
     def Get_Fitness(self):
         basePositionAndOrientation = p.getBasePositionAndOrientation(
-            self.robot)
+            self.robotId)
         basePosition = basePositionAndOrientation[0]
         xPosition = basePosition[0]
         f = open("tmp"+self.solutionID+".txt", "w")
