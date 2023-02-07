@@ -9,5 +9,5 @@ phaseOffsetB = numpy.pi/4
 gravity = -9.8
 zero = 0
 thousand = 1000
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 9
+populationSize = 1
