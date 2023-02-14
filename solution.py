@@ -13,7 +13,8 @@ class SOLUTION:
 
     def Start_Simulation(self, directOrGUI):
         self.Create_World()
-        os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " &")
+        os.system("python3 simulate.py " + directOrGUI +
+                  " " + str(self.myID) + " &")
 
     def Wait_For_Simulation_To_End(self):
         while not os.path.exists("fitness"+str(self.myID)+".txt"):
@@ -25,25 +26,29 @@ class SOLUTION:
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
-        pyrosim.Send_Cube(name="Box", pos=[-1.5, 1, 0.5], size=[1, 1, 1])
-        pyrosim.Send_Cube(name="Box1", pos=[-1.5, 0, 0.5], size=[1, 1, 1])
-        pyrosim.Send_Cube(name="Box2", pos=[-1.5, -1, 0.5], size=[1, 1, 1])
-        # pyrosim.Send_Cube(name="Box", pos=[-1.5, 1, 1.5], size=[1, 1, 1])
-        pyrosim.Send_Cube(name="Box1", pos=[-1.5, 0, 1.5], size=[1, 1, 1])
-        # pyrosim.Send_Cube(name="Box2", pos=[-1.5, -1, 1.5], size=[1, 1, 1])
+        #pyrosim.Send_Cube(name="Test", pos=[1, 0, 0], size=[1, 1, 1], colorful = '    <color rgba="0 0 0 1.0"/>')
+        
         pyrosim.End()
         self.Create_Body()
         self.Create_Brain()
 
     def Create_Body(self):
         pyrosim.Start_URDF("body.urdf")
-        pyrosim.Send_Cube(name="Torso", pos=[1.5, 0, 1.5], size=[1, 1, 1])
+        pyrosim.Send_Cube(name="Torso", pos=[0, 0, 0], size=[1, .1, .1], nameC = "Green",colorful = '    <color rgba="0 255 0 1.0"/>')
         pyrosim.Send_Joint(name="Torso_BackLeg", parent="Torso",
-                           child="BackLeg", type="revolute", position=[2, 0, 1])
-        pyrosim.Send_Cube(name="BackLeg", pos=[0.5, 0, -0.5], size=[1, 1, 1])
+                           child="BackLeg", type="revolute", position=[-0.5, 0, 0])
+        pyrosim.Send_Cube(name="BackLeg", pos=[0.3, 0, 0], size=[.4, .7, .1], nameC = "Blue", colorful = '    <color rgba="0 0 255 1.0"/>')
         pyrosim.Send_Joint(name="Torso_FrontLeg", parent="Torso",
-                           child="FrontLeg", type="revolute", position=[1, 0, 1])
-        pyrosim.Send_Cube(name="FrontLeg", pos=[-0.5, 0, -0.5], size=[1, 1, 1])
+                            child="FrontLeg", type="revolute", position=[0.5, 0, 0])
+        pyrosim.Send_Cube(name="FrontLeg", pos=[0.3, 0, 0], size=[0.3, 0.3, 0.7], nameC = "Green", colorful = '    <color rgba="0 255 0 1.0"/>')
+        # pyrosim.Send_Joint(name="FrontLeg_Leg1", parent="FrontLeg",
+        #                    child="Leg1", type="revolute", position=[1, 0, 0])
+        # pyrosim.Send_Cube(name="Leg1", pos=[0.8, 0, 0], size=[0.3, 0.2, .5], nameC = "Blue", colorful = '    <color rgba="0 0 255 1.0"/>')
+
+        # pyrosim.Send_Joint(name="Leg1_Leg2", parent="Leg1",
+        #                    child="Leg2", type="revolute", position=[-1, 0, 0])
+        # pyrosim.Send_Cube(name="Leg2", pos=[1, 0, 0], size=[0.4, 0.1, .8], nameC = "Green", colorful = '    <color rgba="0 255 0 1.0"/>')
+
         pyrosim.End()
 
     def Create_Brain(self):
