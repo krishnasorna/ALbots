@@ -5,9 +5,7 @@ This Github is for CS396 course at Northwestern University. Random 3D creatures 
 To run the program, click run "search.py" to see the creatures.
 
 Youtube Link:
-
-
-
+https://youtu.be/QLvjPJyO0A4 
 
 Diagram:
 ![IMG_0233](https://user-images.githubusercontent.com/91999196/220247689-d545a480-8003-4502-b95c-715d08c692d3.jpg)
