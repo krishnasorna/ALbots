@@ -1,7 +1,5 @@
-This is an evolving Ludobot that seeks the nearest blocks of cubes and tries to run into them to destroy it. The evolution process is to take steps away from the screen to the left of its x axis and will train itself to run into those placed cubes. It will try to run into those grey blocks as it evolves to move faster and stronger to the left away from the screen. Thus, that is the fitness function and its ability to run towards the blocks and destroy them.
+Assignment 7 CS396
 
+This Github is for CS396 course at Northwestern University. Random 3D creatures that wiggle and move in a simulation. Code was created by following Ludobots, an online course found at https://www.reddit.com/r/ludobots/. Ludobots makes use of the PyroSim modeling interface; the repository can be found at https://github.com/jbongard/pyrosim.git.
 
-git add FILE_NAME.py
-git commit -m "EXPLAIN CHANGE"
-git push origin BRANCH_NAME
-
+To run the program, click run "search.py" to see the creatures.
