@@ -116,7 +116,7 @@ def Send_Cube(name="default",pos=[0,0,0],size=[1,1,1],nameC = "", colorful = "")
 
         Start_Model(name,pos)
 
-        link = LINK_SDF(name,pos,size, nameC,colorful)
+        link = LINK_SDF(name,pos,size)
 
         links.append(link)
     else:

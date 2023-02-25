@@ -10,7 +10,7 @@ from pyrosim.commonFunctions import Save_Whitespace
 
 class LINK_SDF:
 
-    def __init__(self,name,pos,size,colorful):
+    def __init__(self,name,pos,size):
 
         self.name = name
 
@@ -22,7 +22,7 @@ class LINK_SDF:
 
         self.collision = COLLISION_SDF(self.geometry)
 
-        self.visual    = VISUAL_SDF(self.geometry, colorful)
+        self.visual    = VISUAL_SDF(self.geometry)
 
     def Save(self,f):
 

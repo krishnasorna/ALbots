@@ -2,7 +2,7 @@ from pyrosim.commonFunctions import Save_Whitespace
 
 class VISUAL_SDF: 
 
-    def __init__(self,geometry, colorful):
+    def __init__(self,geometry):
 
         self.geometry = geometry 
 
