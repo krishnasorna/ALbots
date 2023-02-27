@@ -3,6 +3,9 @@ import pyrosim.pyrosim as pyrosim
 import os
 import random
 import time
+import pybullet_data
+import pybullet as p
+import constants as c
 
 
 class SOLUTION:
@@ -106,7 +109,19 @@ class SOLUTION:
             for currentColumn in range(3):
                 pyrosim.Send_Synapse(sourceNeuronName=currentRow, targetNeuronName=currentColumn +
                                      3, weight=self.weights[currentRow][currentColumn])
+
+        i = 0
+        self.get_values(i)
+        i += 1
+
         pyrosim.End()
+
+    def get_values(self, i):
+        physicsClient = p.connect(p.DIRECT)
+        backLegSensorValues = numpy.zeros(c.numberOfGenerations)
+
+        backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Limb1")
+        numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
 
     def Mutate(self):
         row = random.randint(0, len(self.weights)-1)

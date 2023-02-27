@@ -48,7 +48,9 @@ class ROBOT:
         positionOfLinkZero = stateOfLinkZero[0]
         xCoordinateOfLinkZero = positionOfLinkZero[0]
         f = open("tmp"+self.solutionID+".txt", "w")
+        #fMain = open("fitnessMain.txt", "w")
         os.system("mv tmp"+self.solutionID +
                   ".txt fitness"+self.solutionID+".txt")
         f.write(str(xCoordinateOfLinkZero))
+        #fMain.write(str(xCoordinateOfLinkZero))
         f.close()
