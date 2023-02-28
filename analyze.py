@@ -2,9 +2,6 @@ import numpy
 import matplotlib.pyplot
 import constants as c
 
-#backLegSensorValues = numpy.load("data/backLegSensorValues.npy")
-#frontLegSensorValues = numpy.load("data/frontLegSensorValues.npy")
-
 array1 = numpy.load("file1.npy")
 array2 = numpy.load("file2.npy")
 array3 = numpy.load("file3.npy")
