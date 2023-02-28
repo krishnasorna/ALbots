@@ -12,7 +12,7 @@ Youtube Link:
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Diagram:
-![Diagram](https://user-images.githubusercontent.com/91999196/221746891-dc8d0646-2ace-42b9-8963-2e6e1b71d8ac.jpg)
+![IMG_0236](https://user-images.githubusercontent.com/91999196/221750937-e9959bf7-8529-44a1-b59d-7208c40b9d6d.jpg)
 
 Fitness Curves:
 
