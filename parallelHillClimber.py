@@ -66,12 +66,8 @@ class PARALLEL_HILL_CLIMBER:
                 max = self.parents[i].fitness
                 index = i
 
-        with open("file5.npy", "wb") as f:
+        with open("file4.npy", "wb") as f:
             np.save(f,np.array(self.data))
-
-        #xArr = list(range(0,c.numberOfGenerations))
-        #plt.plot(xArr, self.data, color = "red")
-        #plt.show()
         self.parents[index].Start_Simulation("GUI")
 
     def Evaluate(self, solutions):

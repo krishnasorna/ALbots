@@ -30,8 +30,7 @@ class SOLUTION:
 
     def Create_World(self):
         pyrosim.Start_SDF("world.sdf")
-        pyrosim.Send_Cube(
-            name="Torso", pos=[-2, 0, 0.3], size=[0.5, 0.5, 0.5])
+        pyrosim.Send_Cube(name="Torso", pos=[6, 0, 0.3], size=[0.5, 0.5, 0.5])
 
         pyrosim.End()
         self.Create_Body()
@@ -55,13 +54,13 @@ class SOLUTION:
         pyrosim.Send_Joint(
             name="Main_Limb1", parent="Main", child="Limb1", type="revolute", position=[2, 0, 1])
         pyrosim.Send_Cube(
-            name="Limb1", pos=[0.5, 0, -0.5], size=[1, 0.5, 1], nameC=color1[1], colorful=color1[0])
+            name="Limb1", pos=[0.5, 0, -0.5], size=[1, 0.5, 1], nameC='Green', colorful='    <color rgba="0.0 1.0 0.0 1.0"/>')
 
         color2 = self.Determine_sensor()
         pyrosim.Send_Joint(
             name="Main_Limb2", parent="Main", child="Limb2", type="revolute", position=[1, 0, 1])
         pyrosim.Send_Cube(
-            name="Limb2", pos=[-0.5, 0, -0.5], size=[1, 0.5, 1], nameC=color2[1], colorful=color2[0])
+            name="Limb2", pos=[-0.5, 0, -0.5], size=[1, 0.5, 1], nameC='Green', colorful='    <color rgba="0.0 1.0 0.0 1.0"/>')
 
         pyrosim.Send_Joint(
             name="Main_Arm1", parent="Main", child="Arm1", type="revolute", position=[1.5, 0.5, 1.5])
@@ -87,7 +86,7 @@ class SOLUTION:
             name="Main_TopHat", parent="Main", child="TopHat", type="revolute", position=[1.5, 0, 2])
         pyrosim.Send_Cube(
             name="TopHat", pos=[0, 0, 0.5], size=[0.1, 0.1, 1], nameC=color1[1], colorful=color1[0])
-
+        
         pyrosim.End()
 
     def Create_Brain(self):
@@ -110,18 +109,7 @@ class SOLUTION:
                 pyrosim.Send_Synapse(sourceNeuronName=currentRow, targetNeuronName=currentColumn +
                                      3, weight=self.weights[currentRow][currentColumn])
 
-        i = 0
-        self.get_values(i)
-        i += 1
-
         pyrosim.End()
-
-    def get_values(self, i):
-        physicsClient = p.connect(p.DIRECT)
-        backLegSensorValues = numpy.zeros(c.numberOfGenerations)
-
-        backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Limb1")
-        numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
 
     def Mutate(self):
         row = random.randint(0, len(self.weights)-1)
