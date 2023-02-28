@@ -15,6 +15,7 @@ Diagram:
 ![Diagram](https://user-images.githubusercontent.com/91999196/221746891-dc8d0646-2ace-42b9-8963-2e6e1b71d8ac.jpg)
 
 Fitness Curves: 
+
 <img width="489" alt="Ludobots Fitness" src="https://user-images.githubusercontent.com/91999196/221749065-6553e671-09a1-4e0b-acbe-784180ab813b.png">
 
 Explanations:
