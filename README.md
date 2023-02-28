@@ -8,4 +8,4 @@ Youtube Link:
 https://youtu.be/QLvjPJyO0A4 
 
 Diagram:
-![IMG_0233](https://user-images.githubusercontent.com/91999196/220247689-d545a480-8003-4502-b95c-715d08c692d3.jpg)
+![Diagram](https://user-images.githubusercontent.com/91999196/221746891-dc8d0646-2ace-42b9-8963-2e6e1b71d8ac.jpg)
