@@ -1,4 +1,4 @@
-**Final Project CS 396**
+Final Project CS 396
 
 Special Thanks:
 
@@ -23,6 +23,7 @@ Fitness Curves:
 <img width="489" alt="Ludobots Fitness" src="https://user-images.githubusercontent.com/91999196/221749065-6553e671-09a1-4e0b-acbe-784180ab813b.png">
 
 Explanation of Evolution:
+
 To create a random evolved 3D creature, the code starts by making a main cube that serves as the torse which is started at (1.5, 0, 1.5), with the 1.5 units in the z-axis to serve as a base point as the creature can evolve longer legs. The torso is a random size with random dimensions so that it is not small or large enough for the creature to evolve.
 
 As the torso is created, the code randomly evolved a number of many limb cubes which yield the best fitness. This is decided based on a pre determined fitness function, and this creature will best adapt as many legs or limbs as it should. The number of cubes are decided and the code creates joints at random locations along torso within a range of values. The links are also positioned in a smooth connection points to not disrupt the motion of the creature and evolution. Sensor placement is found by a best probability to make the creature move and earn a good fitness value. If the sensors are green then it has a motor to allow the creature to walk, otherwise it is a sensor to seek the best fitness.
@@ -30,5 +31,11 @@ As the torso is created, the code randomly evolved a number of many limb cubes w
 The mutations involved for this creature is pre determined and specific based on the fitness functions. The goal of the robot is to use locomotion to go near the grey cube in the world. The random creature first starts off by jittering around and has a low fitness value, but over the 100 generations of mutations of both the brain and the body. This duality of changes is random but also very powerfully chosen as whichever brain and body reaches the cube "survives". Thus the random evolution is selectionary and is going to always prefer the fitness value that is high. As seen in the diagram of the fitness curves, over time the value of the y axis, fitness, goes significantly high.
 
 The reason we used different seeds is to place various populations and differing advantages. This allows us to see how quickly these robots evolve based on the different starting positions. Over 100 generations, these robots evolve to find the fitness that best suits the population and survives over the other children and parent robots.
+
+Results:
+
+This course has taught me much more than I have ever expected and shaped a new understanding of how evolution works. I am greatful to realize I can utilize the purity of evolution and simulate that very concept via Ludobots. I have learned to create an evolutionary algorithm that performs parallel hill climbing to find the best parent/offspring mutations. The concept of evolving a robot to follow instructions has unlimited uses. My robots have been told to evolve bodies and brains to go move closer to a cube that is set far away from them. They utilize a fitness function that decides whether they are making valid choices to survive or not. Each parent has an offspring and those two Ludobots are compared to one another until one of them is able to reproduce another Ludobot. Each successive Ludobot gets better and better at satisfying the fitness function since only the best ones move on to reproduce. This is pure evolution even in nature and we are simulating just that in simulation.
+
+I have found that the best Ludobots are the ones that aren't necessarily bigger in size but more stable. Stability plays a big factor in locomotionn and the evoloved ludobots all have some sort of stabilizing source. Such as a ligament that helps propel them forward but also makes sure not too fly off and fall over. The random Ludobots are usually the ones who do not have stability and sort of stay stationary or even move away from the cube since they have not formed a body to help them move towards the cube. The lineages have been formed to be stable Ludobots that can propel towards the cube without falling over. There have been over trial and error some Ludobots that have evolved to be too stable and not have enough motor strength to go close to the cube. This is where these robots were "stuck" in evolution. Thus it was imperative to find good robots that have both stability and motor strength. These robots had to make a decision on what type of body to form as well as how much motor strength to pursue. Over time, evolution has helped them create the best body types and find a great source of motor locomotion. 
 
 
