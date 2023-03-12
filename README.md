@@ -14,7 +14,8 @@ Teaser GIF:
 
 Final Video (Use sound for Best Experience):
 
-https://youtu.be/lTl9prpPjM4
+(https://img.youtube.com/vi/lTl9prpPjM4/0.jpg)](https://www.youtube.com/watch?v=lTl9prpPjM4)
+
 
 Simulation Arena:
 
