@@ -37,6 +37,8 @@ Parallel Hill Climbing:
 
 <img width="844" alt="Screen Shot 2023-03-12 at 3 01 43 PM" src="https://user-images.githubusercontent.com/91999196/224570233-15d85ab3-5f16-4366-bd91-725410cbab5e.png">
 
+Parallel Hill Climbing is a selective mechanism in which each iteration of parent/child fitness leads to a new generation. As shown in the diagram above, there are 3 different populations with a parent and child in each level. If the fitness of the parent is greater than the fitness of the child, then the parent is able to reproduce again in the next generation. If the child, however, has a better fitness, then it will replace the parent and have its own offspring. Each population has its own fitness comparisons over 100 generations. In this project there were 50 populations with 100 runs of evolution. Over time, there will be comparisons of the parent and the successive children. Each time a Ludobot gets replaced by another, it will change fitness. Through this selective mechanism there is a gradual increase in fitness as only the best Ludobot is selected and given the chance to reproduce. The parallelism comes into play as we have multiple populations all evolving at once. And thus when we reach 100 generations, we will see all 100 of these different Ludobots being compared to one another and will only display the best one. In our case, the fitness is which Ludobot goes to the cube the fastest.
+
 Mutation Diagram:
 
 <img width="690" alt="Screen Shot 2023-03-12 at 3 01 52 PM" src="https://user-images.githubusercontent.com/91999196/224570253-c9ec4dc9-f1be-4a07-a5c9-ec6ca9ffb976.png">
