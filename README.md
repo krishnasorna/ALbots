@@ -24,3 +24,7 @@ As the torso is created, the code randomly evolved a number of many limb cubes w
 The mutations involved for this creature is pre determined and specific based on the fitness fucntions. The goal of the robot is to use locomotion to go near the grey cube in the world. The random creature first starts off by jittering around and has a low fitness value, but over the 100 generations of mutations of both the brain and the body. This duality of changes is random but also very powerfully chosen as whichever brain and body reaches the cube "survives". Thus the random evolution is selectionary and is going to always prefer the fitness value that is high. As seen in the diagram of the fitness curves, over time the value of the y axis, fitness, goes significantly high.
 
 The reason we used different seeds is to place various populations and differing advantages. This allows us to see how quickly these robots evolve based on the different starting positions. Over 100 generations, these robots evolve to find the fitness that best suits the population and survives over the other children and parent robots.
+
+Final GIF:![Final Gif](https://user-images.githubusercontent.com/91999196/224565699-6b78f853-2d9c-4aa6-a227-6ec339379573.gif)
+
+
