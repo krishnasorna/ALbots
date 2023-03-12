@@ -19,6 +19,7 @@ Genotype-Phenotype:
 
 <img width="624" alt="Screen Shot 2023-03-12 at 2 21 21 PM" src="https://user-images.githubusercontent.com/91999196/224567930-e948b084-78fc-4430-ab9f-1a9029515bda.png">
 
+As seen above, different genotypes encoded different phenotypes of a robot. This is found in nature as well which is what makes Ludobots such an amazing invention. We are able to have various Ludobots based on evolution that changes not only their phenotypes but their genetic makeup. This is wild to imagine as we have the power to experiment in real time but with speeded up results.
 
 Fitness Curves:
 
