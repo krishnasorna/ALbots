@@ -16,6 +16,8 @@ Final Video (Use sound for Best Experience):
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lTl9prpPjM4/0.jpg)](https://www.youtube.com/watch?v=lTl9prpPjM4)
 
+(Click on Thumbnail)
+
 
 Simulation Arena:
 
