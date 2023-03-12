@@ -15,6 +15,12 @@ Teaser GIF:
 Final Video:
 INSERT HERE
 
+Simulation Arena:
+
+Here is a figure of the simulation's arena in which the Ludobot resides. This is to help visualize how the robot interacts with its surroundings.
+
+<img width="600" alt="Screen Shot 2023-03-12 at 2 27 13 PM" src="https://user-images.githubusercontent.com/91999196/224568273-11394805-84ff-43a9-bd70-7e329eb59702.png">
+
 Genotype-Phenotype:
 
 <img width="624" alt="Screen Shot 2023-03-12 at 2 21 21 PM" src="https://user-images.githubusercontent.com/91999196/224567930-e948b084-78fc-4430-ab9f-1a9029515bda.png">
