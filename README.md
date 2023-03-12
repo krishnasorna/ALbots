@@ -25,6 +25,7 @@ The mutations involved for this creature is pre determined and specific based on
 
 The reason we used different seeds is to place various populations and differing advantages. This allows us to see how quickly these robots evolve based on the different starting positions. Over 100 generations, these robots evolve to find the fitness that best suits the population and survives over the other children and parent robots.
 
-Final GIF:![Final Gif](https://user-images.githubusercontent.com/91999196/224565699-6b78f853-2d9c-4aa6-a227-6ec339379573.gif)
+Final GIF:
+![Final Gif](https://user-images.githubusercontent.com/91999196/224565699-6b78f853-2d9c-4aa6-a227-6ec339379573.gif)
 
 
