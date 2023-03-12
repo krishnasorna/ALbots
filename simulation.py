@@ -24,7 +24,7 @@ class SIMULATION:
         for i in range(c.thousand):
             p.stepSimulation()
             if (self.directOrGUI == "GUI"):
-                time.sleep(1/100)
+                time.sleep(1/500)
             self.robot.Sense(i)
             self.robot.Think()
             self.robot.Act(i)
@@ -34,3 +34,10 @@ class SIMULATION:
 
     def Get_Fitness(self):
         self.robot.Get_Fitness()
+    
+    def Get_Evolution(self):
+        for i in range(c.populationSize):
+            if self.robot.Get_Fitness()>c.numberOfGenerations*i:
+                return 0
+            else:
+                return self.robot.Get_Fitness()
